@@ -1,12 +1,12 @@
 {
-  "name": "@atomist/seed-sdm",
+  "name": "@atomist/blank-sdm",
   "version": "0.1.0",
-  "description": "A seed SDM to deliver automation client projects",
+  "description": "A blank SDM to deliver automation client projects",
   "author": "Atomist, Inc.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atomist/seed-sdm.git"
+    "url": "https://github.com/atomist/blank-sdm.git"
   },
   "keywords": [
     "atomist",
@@ -15,9 +15,9 @@
     "kubernetes",
     "sdm"
   ],
-  "homepage": "https://github.com/atomist/seed-sdm#readme",
+  "homepage": "https://github.com/atomist/blank-sdm#readme",
   "bugs": {
-    "url": "https://github.com/atomist/seed-sdm/issues"
+    "url": "https://github.com/atomist/blank-sdm/issues"
   },
   "main": "./index.js",
   "types": "./index.d.ts",

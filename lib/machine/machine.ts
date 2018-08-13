@@ -22,17 +22,15 @@ import {
     createSoftwareDeliveryMachine,
     summarizeGoalsInGitHubStatus,
 } from "@atomist/sdm-core";
-import { addSpringSupport } from "./springSupport";
 
 export function machine(
     configuration: SoftwareDeliveryMachineConfiguration,
 ): SoftwareDeliveryMachine {
 
     const sdm = createSoftwareDeliveryMachine({
-        name: "Minimal Seed Software Delivery Machine",
+        name: "Blank Seed Software Delivery Machine",
         configuration,
     });
-    addSpringSupport(sdm);
 
     summarizeGoalsInGitHubStatus(sdm);
 
