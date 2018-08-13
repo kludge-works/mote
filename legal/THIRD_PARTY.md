@@ -1,6 +1,6 @@
-# @atomist/seed-sdm
+# @atomist/blank-sdm
 
-This page details all runtime OSS dependencies of `@atomist/seed-sdm`.
+This page details all runtime OSS dependencies of `@atomist/blank-sdm`.
 
 ## Licenses
 
