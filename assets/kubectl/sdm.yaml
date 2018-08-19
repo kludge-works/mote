@@ -1,32 +1,70 @@
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sdm
+  labels:
+    owner: atomist
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sdm-serviceaccount
+  namespace: sdm
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: Role
+metadata:
+  name: sdm-role
+  namespace: sdm
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["extensions", "apps"]
+    resources: ["deployments"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["batch"]
+    resources: ["jobs"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: sdm-role-binding
+  namespace: sdm
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: sdm-role
+subjects:
+  - kind: ServiceAccount
+    name: sdm-serviceaccount
+    namespace: sdm
+---
 kind: Deployment
 apiVersion: extensions/v1beta1
 metadata:
-  name: seed-sdm
+  name: blank-sdm
   namespace: sdm
   labels:
-    app: seed-sdm
-    owner: atomist
+    app: blank-sdm
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: seed-sdm
-      owner: atomist
+      app: blank-sdm
   template:
     metadata:
       labels:
-        app: seed-sdm
-        owner: atomist
+        app: blank-sdm
         version: "0"
-      annotations:
-        atomist.com/k8vent: '{"webhooks":["https://webhook.atomist.com/atomist/kube/teams/T29E48P34"]}'
     spec:
       serviceAccountName: sdm-serviceaccount
       containers:
-      - name: seed-sdm
-        image: atomist/seed-sdm:0.1.0
+      - name: blank-sdm
+        image: atomist/blank-sdm:0.1.0
         imagePullPolicy: IfNotPresent
         env:
         - name: ATOMIST_DEPLOYMENT_NAME
@@ -38,34 +76,29 @@ spec:
         - name: NODE_ENV
           value: production
         - name: FORCE_COLOR
-          value: '1'
+          value: "1"
         - name: ATOMIST_GOAL_LAUNCHER
           value: kubernetes
-        - name: ATOMIST_CONFIG
-          valueFrom:
-            secretKeyRef:
-              name: atm-sdm
-              key: config
         - name: ATOMIST_CONFIG_PATH
-          value: "/opt/atm/atomist-config.json"
+          value: /opt/atm/client.config.json
         ports:
         - name: http
           containerPort: 2866
           protocol: TCP
-        readinessProbe:
+        livenessProbe:
           httpGet:
             path: "/health"
-            port: http
+            port: 2866
             scheme: HTTP
           initialDelaySeconds: 20
           timeoutSeconds: 3
           periodSeconds: 20
           successThreshold: 1
           failureThreshold: 3
-        livenessProbe:
+        readinessProbe:
           httpGet:
             path: "/health"
-            port: http
+            port: 2866
             scheme: HTTP
           initialDelaySeconds: 20
           timeoutSeconds: 3
@@ -74,29 +107,22 @@ spec:
           failureThreshold: 3
         resources:
           limits:
-            cpu: 2000m
-            memory: 3000Mi
+            cpu: 1000m
+            memory: 512Mi
           requests:
-            cpu: 500m
-            memory: 1000Mi
+            cpu: 100m
+            memory: 384Mi
         volumeMounts:
-        - name: docker-sock
-          mountPath: "/var/run/docker.sock"
         - name: automation
-          mountPath: "/opt/atm"
+          mountPath: /opt/atm
           readOnly: true
       volumes:
-      - name: docker-sock
-        hostPath:
-          path: "/var/run/docker.sock"
       - name: automation
         secret:
           secretName: automation
       restartPolicy: Always
-      terminationGracePeriodSeconds: 180
+      terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
-      imagePullSecrets:
-      - name: atomistjfrog
   strategy:
     type: RollingUpdate
     rollingUpdate:
