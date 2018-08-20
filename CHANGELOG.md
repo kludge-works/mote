@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][]
 
-[Unreleased]: https://github.com/atomist/atomist-sdm/compare/HEAD
+[Unreleased]: https://github.com/atomist/blank-sdm/compare/HEAD
 
-### Changed
+### Added
 
--   Remove functionality
+-   Empty SDM.
