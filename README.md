@@ -1,4 +1,4 @@
-# blank-sdm
+# @atomist/blank-sdm
 
 [![npm version](https://badge.fury.io/js/%40atomist%2Fblank-sdm.svg)](https://badge.fury.io/js/%40atomist%2Fblank-sdm)
 
