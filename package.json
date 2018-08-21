@@ -21,7 +21,7 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "@atomist/automation-client": "^0.21.2",
+    "@atomist/automation-client": "^0.21.3",
     "@atomist/sdm": "^0.4.3",
     "@atomist/sdm-core": "^0.4.3"
   },
