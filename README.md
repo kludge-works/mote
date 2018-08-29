@@ -1,6 +1,7 @@
 # @atomist/blank-sdm
 
-[![npm version](https://badge.fury.io/js/%40atomist%2Fblank-sdm.svg)](https://badge.fury.io/js/%40atomist%2Fblank-sdm)
+[![atomist sdm goals](http://badge.atomist.com/T29E48P34/atomist/blank-sdm-seed/0aaf5b12-ff68-4e22-bcf6-9b84c49dae19)](https://app.atomist.com/workspace/T29E48P34)
+[![npm version](https://img.shields.io/npm/v/@atomist/blank-sdm.svg)](https://www.npmjs.com/package/@atomist/blank-sdm)
 
 The simplest possible [Atomist][atomist] software delivery machine
 (SDM).
@@ -13,42 +14,37 @@ software.
 
 ## Prerequisites
 
-Before you can run this project, you will need an Atomist workspace.
+See the [Atomist Developer documentation][atomist-dev] for
+instructions on setting up your development environment.  Briefly, you
+will need [Git][git], [Node.js][node], and the [Atomist
+CLI][atomist-cli] installed and properly configured on your system.
+With these installed, you can run this SDM in local mode.
+
+To run this SDM for your team, you will need an Atomist workspace.
 See the [Atomist Getting Started Guide][atomist-start] for
 instructions on how to get an Atomist workspace and connect it to your
 source code repositories, continuous integration, chat platform, etc.
 
-You will also need several other prerequisites to successfully run
-this project.  See the [Atomist Developer Guide][atomist-dev] for
-instructions on setting up your development environment.  Briefly, you
-will need [Git][git], [Node.js][node], and the [Atomist
-CLI][atomist-cli] installed and properly configured on your system.
-
-[atomist-start]: https://docs.atomist.com/user/ (Atomist - Getting Started)
 [atomist-dev]: https://docs.atomist.com/developer/prerequisites/ (Atomist - Developer Prerequisites)
 [git]: https://git-scm.com/ (Git)
 [atomist-cli]: https://github.com/atomist/cli (Atomist Command-Line Interface)
+[atomist-start]: https://docs.atomist.com/user/ (Atomist - Getting Started)
 
 ## Running
 
-Once the prerequisites are met on your system, use `npm` to install
-dependencies and build the project.
+See the [Atomist Developer documentation][atomist-dev] for details on
+how to run this SDM.  Briefly, once the prerequisites are met on your
+system you can start the SDM in local mode with the following command:
 
 ```
-$ npm install
-$ npm run build
+$ atomist start --local
 ```
 
-You can start up your SDM in the usual `npm` way.
+The Atomist documentation for [running SDMs][atomist-run] has
+instructions for connecting and SDM to the Atomist API for software
+and running an SDM in various environments.
 
-```
-$ npm start
-```
-
-The [Atomist API Client documentation][atomist-client] has more
-complete instructions for running an SDM or other Atomist API client.
-
-[atomist-client]: https://docs.atomist.com/developer/client/ (Atomist - API Client)
+[atomist-run]: https://docs.atomist.com/developer/run/ (Atomist - Running SDMs)
 
 ## Support
 
@@ -61,31 +57,30 @@ If you find a problem, please create an [issue][].
 
 ## Development
 
-You will need to install [node][] to build and test this project.
+You will need to install [Node.js][node] to build and test this
+project.
 
 [node]: https://nodejs.org/ (Node.js)
 
 ### Build and test
 
-Use the following package scripts to build, test, and perform other
-development tasks.
+Install dependencies.
 
-Command | Reason
-------- | ------
-`npm install` | install project dependencies
-`npm run build` | compile, test, lint, and generate docs
-`npm start` | start the SDM
-`npm run autostart` | run the SDM, refreshing when files change
-`npm run lint` | run TSLint against the TypeScript
-`npm run compile` | generate types from GraphQL and compile TypeScript
-`npm test` | run tests
-`npm run autotest` | run tests every time a file changes
-`npm run clean` | remove files generated during build
+```
+$ npm install
+```
+
+Use the `build` package script to compile, test, lint, and build the
+documentation.
+
+```
+$ npm run build
+```
 
 ### Release
 
 Releases are handled via the [Atomist SDM][atomist-sdm].  Just press
-the release button in the Atomist dashboard or Slack.
+the 'Approve' button in the Atomist dashboard or Slack.
 
 [atomist-sdm]: https://github.com/atomist/atomist-sdm (Atomist Software Delivery Machine)
 
