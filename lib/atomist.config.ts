@@ -27,6 +27,7 @@ const machineOptions: ConfigureOptions = {
 };
 
 export const configuration: Configuration = {
+    workspaceIds: ["connect this SDM to your whole team with the Atomist service"],
     postProcessors: [
         configureSdm(machine, machineOptions),
     ],
