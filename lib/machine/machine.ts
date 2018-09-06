@@ -20,7 +20,6 @@ import {
 } from "@atomist/sdm";
 import {
     createSoftwareDeliveryMachine,
-    summarizeGoalsInGitHubStatus,
 } from "@atomist/sdm-core";
 
 export function machine(
@@ -31,8 +30,6 @@ export function machine(
         name: "Blank Seed Software Delivery Machine",
         configuration,
     });
-
-    summarizeGoalsInGitHubStatus(sdm);
 
     return sdm;
 }
