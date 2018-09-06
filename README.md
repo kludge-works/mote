@@ -1,3 +1,7 @@
+# DEPRECATED
+
+See [atomist-seeds/empty-sdm](https://github.com/atomist-seeds/empty-sdm).
+
 # @atomist/blank-sdm
 
 [![atomist sdm goals](http://badge.atomist.com/T29E48P34/atomist/blank-sdm-seed/0aaf5b12-ff68-4e22-bcf6-9b84c49dae19)](https://app.atomist.com/workspace/T29E48P34)
