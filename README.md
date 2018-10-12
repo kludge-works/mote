@@ -1,50 +1,58 @@
+<p align="center">
+  <img src="https://images.atomist.com/sdm/SDM-Logo-Dark.png">
+</p>
+
 # @atomist-seeds/empty-sdm
 
-[![atomist sdm goals](http://badge.atomist.com/T29E48P34/atomist/blank-sdm-seed/0aaf5b12-ff68-4e22-bcf6-9b84c49dae19)](https://app.atomist.com/workspace/T29E48P34)
-[![npm version](https://img.shields.io/npm/v/@atomist/blank-sdm.svg)](https://www.npmjs.com/package/@atomist/blank-sdm)
+[![atomist sdm goals](http://badge.atomist.com/T29E48P34/atomist-seeds/empty-sdm/c796f715-67c3-48ae-8b7c-45c0fd31443f)](https://app.atomist.com/workspace/T29E48P34)
+[![npm version](https://img.shields.io/npm/v/@atomist-seeds/empty-sdm.svg)](https://www.npmjs.com/package/@atomist-seeds/empty-sdm)
 
 The simplest possible [Atomist][atomist] software delivery machine
 (SDM).
 
-See the [Atomist documentation][atomist-doc] for more information on
-what SDMs are and what they can do for you using the Atomist API for
-software.
+Software delivery machines enable you to control your delivery process
+in code.  Think of it as an API for your software delivery.  See the
+[Atomist documentation][atomist-doc] for more information on the
+concept of a software delivery machine and how to create and develop
+an SDM.
 
 [atomist-doc]: https://docs.atomist.com/ (Atomist Documentation)
 
-## Prerequisites
+## Getting started
 
-See the [Atomist Developer documentation][atomist-dev] for
-instructions on setting up your development environment.  Briefly, you
-will need [Git][git], [Node.js][node], and the [Atomist
-CLI][atomist-cli] installed and properly configured on your system.
-With these installed, you can run this SDM in local mode.
+See the [Developer Quick Start][atomist-quick] to jump straight to
+creating an SDM.
 
-To run this SDM for your team, you will need an Atomist workspace.
-See the [Atomist Getting Started Guide][atomist-start] for
-instructions on how to get an Atomist workspace and connect it to your
-source code repositories, continuous integration, chat platform, etc.
+[atomist-quick]: https://docs.atomist.com/quick-start/ (Atomist - Developer Quick Start)
 
-[atomist-dev]: https://docs.atomist.com/developer/prerequisites/ (Atomist - Developer Prerequisites)
-[git]: https://git-scm.com/ (Git)
-[atomist-cli]: https://github.com/atomist/cli (Atomist Command-Line Interface)
-[atomist-start]: https://docs.atomist.com/user/ (Atomist - Getting Started)
+## Contributing
 
-## Running
+Contributions to this project from community members are encouraged
+and appreciated. Please review the [Contributing
+Guidelines](CONTRIBUTING.md) for more information. Also see the
+[Development](#development) section in this document.
 
-See the [Atomist Developer documentation][atomist-dev] for details on
-how to run this SDM.  Briefly, once the prerequisites are met on your
-system you can start the SDM in local mode with the following command:
+## Code of conduct
 
-```
-$ atomist start --local
-```
+This project is governed by the [Code of
+Conduct](CODE_OF_CONDUCT.md). You are expected to act in accordance
+with this code by participating. Please report any unacceptable
+behavior to code-of-conduct@atomist.com.
 
-The Atomist documentation for [running SDMs][atomist-run] has
-instructions for connecting and SDM to the Atomist API for software
-and running an SDM in various environments.
+## Documentation
 
-[atomist-run]: https://docs.atomist.com/developer/run/ (Atomist - Running SDMs)
+Please see [docs.atomist.com][atomist-doc] for
+[developer][atomist-sdm] documentation.
+
+[atomist-sdm]: https://docs.atomist.com/developer/sdm/ (Atomist Documentation - SDM Developer)
+
+## Connect
+
+Follow [@atomist][atomist-twitter] and [The Composition][atomist-blog]
+blog related to SDM.
+
+[atomist-twitter]: https://twitter.com/atomist (Atomist on Twitter)
+[atomist-blog]: https://the-composition.com/ (The Composition - The Official Atomist Blog)
 
 ## Support
 
@@ -53,7 +61,7 @@ channel in the [Atomist community Slack workspace][slack].
 
 If you find a problem, please create an [issue][].
 
-[issue]: https://github.com/atomist/blank-sdm/issues
+[issue]: https://github.com/atomist-seeds/empty-sdm/issues
 
 ## Development
 
