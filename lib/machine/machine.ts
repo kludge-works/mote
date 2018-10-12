@@ -27,7 +27,7 @@ export function machine(
 ): SoftwareDeliveryMachine {
 
     const sdm = createSoftwareDeliveryMachine({
-        name: "Blank Seed Software Delivery Machine",
+        name: "Empty Seed Software Delivery Machine",
         configuration,
     });
 
