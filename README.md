@@ -42,9 +42,9 @@ behavior to code-of-conduct@atomist.com.
 ## Documentation
 
 Please see [docs.atomist.com][atomist-doc] for
-[developer][atomist-sdm] documentation.
+[developer][atomist-doc-sdm] documentation.
 
-[atomist-sdm]: https://docs.atomist.com/developer/sdm/ (Atomist Documentation - SDM Developer)
+[atomist-doc-sdm]: https://docs.atomist.com/developer/sdm/ (Atomist Documentation - SDM Developer)
 
 ## Connect
 
