@@ -41,6 +41,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
 
 COPY package.json package-lock.json ./
 
-RUN npm ci
+RUN npm ci \
+    && npm cache clean --force
 
 COPY . .
