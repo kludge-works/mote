@@ -22,13 +22,32 @@ import {
 import { machine } from "./lib/machine/machine";
 
 const machineOptions: ConfigureOptions = {
+    /**
+     * When your SDM requires configuration that is unique to it,
+     * you can list it here.
+     */
     requiredConfigurationValues: [
     ],
 };
 
+/**
+ * The starting point for building an SDM is here!
+ */
 export const configuration: Configuration = {
+    /**
+     * To run in team mode, you'll need an Atomist workspace.
+     * To run in local mode, you don't. This will be ignored.
+     * See: https://docs.atomist.com/developer/architecture/#connect-your-sdm
+     */
     workspaceIds: ["connect this SDM to your whole team with the Atomist service"],
     postProcessors: [
+        /**
+         * This is important setup! This defines the function that will be called
+         * to configure your SDM with everything that you want it to do.
+         * 
+         * Click into the first argument (the "machine" function) to personalize 
+         * your SDM.
+         */
         configureSdm(machine, machineOptions),
     ],
 };
