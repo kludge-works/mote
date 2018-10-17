@@ -44,8 +44,8 @@ export const configuration: Configuration = {
         /**
          * This is important setup! This defines the function that will be called
          * to configure your SDM with everything that you want it to do.
-         * 
-         * Click into the first argument (the "machine" function) to personalize 
+         *
+         * Click into the first argument (the "machine" function) to personalize
          * your SDM.
          */
         configureSdm(machine, machineOptions),

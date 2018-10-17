@@ -24,7 +24,7 @@ import {
 
 /**
  * Initialize an sdm definition, and add functionality to it.
- * 
+ *
  * @param configuration All the configuration for this service
  */
 export function machine(
@@ -36,10 +36,10 @@ export function machine(
         configuration,
     });
 
-    /* 
-     * this is a good place to type 
+    /*
+     * this is a good place to type
     sdm.
-     * and see what the IDE suggests for after the dot 
+     * and see what the IDE suggests for after the dot
      */
 
     return sdm;
