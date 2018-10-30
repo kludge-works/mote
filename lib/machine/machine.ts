@@ -22,6 +22,11 @@ import {
     createSoftwareDeliveryMachine,
 } from "@atomist/sdm-core";
 
+/**
+ * Initialize an sdm definition, and add functionality to it.
+ *
+ * @param configuration All the configuration for this service
+ */
 export function machine(
     configuration: SoftwareDeliveryMachineConfiguration,
 ): SoftwareDeliveryMachine {
@@ -30,6 +35,12 @@ export function machine(
         name: "Empty Seed Software Delivery Machine",
         configuration,
     });
+
+    /*
+     * this is a good place to type
+    sdm.
+     * and see what the IDE suggests for after the dot
+     */
 
     return sdm;
 }
