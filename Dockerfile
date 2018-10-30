@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 LABEL maintainer="Atomist <docker@atomist.com>"
 
 RUN apt-get update && apt-get install -y \
-        curl \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 ENV DUMB_INIT_VERSION=1.2.2
@@ -20,6 +20,7 @@ EXPOSE 2866
 
 ENV BLUEBIRD_WARNINGS 0
 ENV NODE_ENV production
+ENV ATOMIST_ENV development
 ENV NPM_CONFIG_LOGLEVEL warn
 ENV SUPPRESS_NO_CONFIG_WARNING true
 
@@ -28,8 +29,8 @@ ENTRYPOINT ["dumb-init", "node", "--trace-warnings", "--expose_gc", "--optimize_
 CMD ["node_modules/.bin/atm-start"]
 
 RUN apt-get update && apt-get install -y \
-        build-essential \
-        git \
+    build-essential \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 RUN git config --global user.email "bot@atomist.com" \
