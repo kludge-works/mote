@@ -14,40 +14,34 @@
  * limitations under the License.
  */
 
-import { Configuration } from "@atomist/automation-client";
-import {
-    ConfigureOptions,
-    configureSdm,
-} from "@atomist/sdm-core";
-import { machine } from "./lib/machine/machine";
-
-const machineOptions: ConfigureOptions = {
-    /**
-     * When your SDM requires configuration that is unique to it,
-     * you can list it here.
-     */
-    requiredConfigurationValues: [
-    ],
-};
+import { AnyPush } from "@atomist/sdm";
+import { configure } from "@atomist/sdm-core";
+import { HelloWorldGoalConfigurer } from "./lib/goals/goalConfigurer";
+import { HelloWorldGoalCreator } from "./lib/goals/goalCreator";
+import { HelloWorldGoals } from "./lib/goals/goals";
 
 /**
- * The starting point for building an SDM is here!
+ * The main entry point into the SDM
  */
-export const configuration: Configuration = {
-    /**
-     * To run in team mode, you'll need an Atomist workspace.
-     * To run in local mode, you don't. This will be ignored.
-     * See: https://docs.atomist.com/developer/architecture/#connect-your-sdm
-     */
-    workspaceIds: ["connect this SDM to your whole team with the Atomist service"],
-    postProcessors: [
-        /**
-         * This is important setup! This defines the function that will be called
-         * to configure your SDM with everything that you want it to do.
-         *
-         * Click into the first argument (the "machine" function) to personalize
-         * your SDM.
-         */
-        configureSdm(machine, machineOptions),
-    ],
-};
+export const configuration = configure<HelloWorldGoals>(async sdm => {
+
+    // Use the sdm instance to configure commands etc
+    sdm.addCommand({
+        name: "HelloWorld",
+        description: "Command that responds with a 'hello world'",
+        listener: async ci => {
+            await ci.addressChannels("Hello World");
+        },
+    });
+
+    // Create goals and configure them
+    const goals = await sdm.createGoals(HelloWorldGoalCreator, [HelloWorldGoalConfigurer]);
+
+    // Return all push rules
+    return {
+        hello: {
+            test: AnyPush,
+            goals: goals.helloWorld,
+        },
+    };
+});
