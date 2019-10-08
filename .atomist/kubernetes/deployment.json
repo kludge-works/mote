@@ -7,10 +7,6 @@
           {
             "env": [
               {
-                "name": "ATOMIST_DEPLOYMENT_NAME",
-                "value": "blank-sdm"
-              },
-              {
                 "name": "ATOMIST_DEPLOYMENT_NAMESPACE",
                 "valueFrom": {
                   "fieldRef": {
@@ -31,17 +27,8 @@
                 "value": "kubernetes"
               },
               {
-                "name": "ATOMIST_CONFIG",
-                "valueFrom": {
-                  "secretKeyRef": {
-                    "name": "atm-sdm",
-                    "key": "config"
-                  }
-                }
-              },
-              {
                 "name": "ATOMIST_CONFIG_PATH",
-                "value": "/opt/atm/atomist-config.json"
+                "value": "/opt/atm/client.config.json"
               }
             ],
             "livenessProbe": {
@@ -80,7 +67,7 @@
             },
             "volumeMounts": [
               {
-                "name": "automation",
+                "name": "empty-sdm",
                 "mountPath": "/opt/atm",
                 "readOnly": true
               }
@@ -89,9 +76,9 @@
         ],
         "volumes": [
           {
-            "name": "automation",
+            "name": "empty-sdm",
             "secret": {
-              "secretName": "automation"
+              "secretName": "empty-sdm"
             }
           }
         ],
