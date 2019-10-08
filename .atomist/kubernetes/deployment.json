@@ -2,12 +2,19 @@
   "spec": {
     "template": {
       "spec": {
-        "serviceAccountName": "sdm-serviceaccount",
         "containers": [
           {
             "env": [
               {
-                "name": "ATOMIST_DEPLOYMENT_NAMESPACE",
+                "name": "ATOMIST_CONFIG_PATH",
+                "value": "/opt/atm/client.config.json"
+              },
+              {
+                "name": "ATOMIST_GOAL_LAUNCHER",
+                "value": "kubernetes"
+              },
+              {
+                "name": "ATOMIST_POD_NAMESPACE",
                 "valueFrom": {
                   "fieldRef": {
                     "fieldPath": "metadata.namespace"
@@ -15,45 +22,33 @@
                 }
               },
               {
-                "name": "NODE_ENV",
-                "value": "production"
-              },
-              {
                 "name": "FORCE_COLOR",
                 "value": "1"
-              },
-              {
-                "name": "ATOMIST_GOAL_LAUNCHER",
-                "value": "kubernetes"
-              },
-              {
-                "name": "ATOMIST_CONFIG_PATH",
-                "value": "/opt/atm/client.config.json"
               }
             ],
             "livenessProbe": {
+              "failureThreshold": 3,
               "httpGet": {
                 "path": "/health",
                 "port": "http",
                 "scheme": "HTTP"
               },
               "initialDelaySeconds": 20,
-              "timeoutSeconds": 3,
               "periodSeconds": 20,
               "successThreshold": 1,
-              "failureThreshold": 3
+              "timeoutSeconds": 3
             },
             "readinessProbe": {
+              "failureThreshold": 3,
               "httpGet": {
                 "path": "/health",
                 "port": "http",
                 "scheme": "HTTP"
               },
               "initialDelaySeconds": 20,
-              "timeoutSeconds": 3,
               "periodSeconds": 20,
               "successThreshold": 1,
-              "failureThreshold": 3
+              "timeoutSeconds": 3
             },
             "resources": {
               "limits": {
@@ -74,6 +69,7 @@
             ]
           }
         ],
+        "serviceAccountName": "empty-sdm",
         "volumes": [
           {
             "name": "empty-sdm",
@@ -81,8 +77,7 @@
               "secretName": "empty-sdm"
             }
           }
-        ],
-        "terminationGracePeriodSeconds": 30
+        ]
       }
     }
   }
