@@ -66,6 +66,27 @@
             ]
           }
         ],
+        "initContainers": [
+          {
+            "args": [
+              "git config --global user.email 'bot@atomist.com' && git config --global user.name 'Atomist Bot'"
+            ],
+            "command": ["/bin/sh", "-c"],
+            "image": "atomist/sdm-base:0.3.0",
+            "name": "atomist-home-git",
+            "securityContext": {
+              "allowPrivilegeEscalation": false,
+              "privileged": false,
+              "readOnlyRootFilesystem": true
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/home/atomist",
+                "name": "atomist-home"
+              }
+            ]
+          }
+        ],
         "securityContext": {
           "fsGroup": 2866,
           "runAsGroup": 2866,
