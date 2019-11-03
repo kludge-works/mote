@@ -25,9 +25,9 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "dependencies": {
-    "@atomist/automation-client": "1.8.0-master.20191028235651",
+    "@atomist/automation-client": "1.8.0-master.20191102180610",
     "@atomist/sdm": "1.8.0-dynamic-goals.20191023214836",
-    "@atomist/sdm-core": "1.8.0-dynamic-goals.20191029003037"
+    "@atomist/sdm-core": "1.8.0-dynamic-goals.20191031120529"
   },
   "devDependencies": {
     "@atomist/sdm-local": "1.2.2-master.20191011215150",
