@@ -41,8 +41,8 @@ Apache License 2.0 - [http://www.apache.org/licenses/LICENSE-2.0](http://www.apa
 
 | Name | Version | Publisher | Repository |
 |------|---------|-----------|------------|
-|`@atomist/sdm-core`|`1.8.0-dynamic-goals.20191108100909`|Atomist|[https://github.com/atomist/sdm-core](https://github.com/atomist/sdm-core)|
-|`@atomist/sdm`|`1.8.0-dynamic-goals.20191107230956`|Atomist|[https://github.com/atomist/sdm](https://github.com/atomist/sdm)|
+|`@atomist/sdm-core`|`1.8.0-dynamic-goals.20191108152504`|Atomist|[https://github.com/atomist/sdm-core](https://github.com/atomist/sdm-core)|
+|`@atomist/sdm`|`1.8.0-dynamic-goals.20191108140247`|Atomist|[https://github.com/atomist/sdm](https://github.com/atomist/sdm)|
 |`@atomist/slack-messages`|`1.1.1`|Atomist|[https://github.com/atomist/slack-messages](https://github.com/atomist/slack-messages)|
 |`@kubernetes/client-node`|`0.10.3`|Kubernetes Authors|[https://github.com/kubernetes-client/javascript](https://github.com/kubernetes-client/javascript)|
 |`aws-sign2`|`0.7.0`|Mikeal Rogers|[https://github.com/mikeal/aws-sign](https://github.com/mikeal/aws-sign)|
@@ -398,7 +398,7 @@ MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licen
 |`caller-path`|`2.0.0`|Sindre Sorhus|[https://github.com/sindresorhus/caller-path](https://github.com/sindresorhus/caller-path)|
 |`callsites`|`2.0.0`|Sindre Sorhus|[https://github.com/sindresorhus/callsites](https://github.com/sindresorhus/callsites)|
 |`camel-case`|`3.0.0`|Blake Embrey|[https://github.com/blakeembrey/camel-case](https://github.com/blakeembrey/camel-case)|
-|`camelcase-keys`|`6.1.0`|Sindre Sorhus|[https://github.com/sindresorhus/camelcase-keys](https://github.com/sindresorhus/camelcase-keys)|
+|`camelcase-keys`|`6.1.1`|Sindre Sorhus|[https://github.com/sindresorhus/camelcase-keys](https://github.com/sindresorhus/camelcase-keys)|
 |`camelcase`|`5.3.1`|Sindre Sorhus|[https://github.com/sindresorhus/camelcase](https://github.com/sindresorhus/camelcase)|
 |`camelize`|`1.0.0`|James Halliday|[https://github.com/substack/camelize](https://github.com/substack/camelize)|
 |`cardinal`|`2.1.1`|Thorsten Lorenz|[https://github.com/thlorenz/cardinal](https://github.com/thlorenz/cardinal)|
