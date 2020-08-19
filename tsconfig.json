@@ -16,16 +16,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": [
-    "index.ts",
-    "commands/**/*.ts",
-    "events/**/*.ts",
-    "goals/**/*.ts",
-    "tests/**/*.ts",
-    "bin/*.ts",
-    "lib/**/*.ts",
-    "test/**/*.ts",
-  ],
+  "include": ["index.ts", "bin/*.ts", "lib/**/*.ts", "test/**/*.ts"],
   "exclude": [".#*"],
   "compileOnSave": true,
   "buildOnSave": false,
